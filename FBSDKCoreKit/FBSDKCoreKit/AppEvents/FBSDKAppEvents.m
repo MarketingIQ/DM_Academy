@@ -874,7 +874,7 @@ static BOOL g_explicitEventsLoggedYet = NO;
   [self.atePublisher publishATE];
 #else
   __weak FBSDKAppEvents *weakSelf = self;
-  fb_dispatch_on_default_thread(^(void) {
+  fb_dispatch_on_main_thread(^(void) {
     [weakSelf.atePublisher publishATE];
   });
 #endif
@@ -1142,6 +1142,11 @@ static BOOL g_explicitEventsLoggedYet = NO;
     }
 
     [self checkPersistedEvents];
+    
+    if (nil != [self.appEventsUtility getCampaignIDs]) {
+       [self flushForReason:FBSDKAppEventsFlushReasonEagerlyFlushingEvent];
+       return;
+    }
 
     if (self.appEventsState.events.count > NUM_LOG_EVENTS_TO_TRY_TO_FLUSH_AFTER
         && self.flushBehavior != FBSDKAppEventsFlushBehaviorExplicitOnly) {
