@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+  	<title>Graph API Status</title>
+  	<link>https://metastatus.com/graph-api</link>
+  	<atom:link href="https://metastatus.com/outage-events-feed-graph-api.rss" rel="self" type="application/rss+xml" />
+  	<description>Status updates for Graph API</description>
+  	<lastBuildDate>Thu, 06 Jul 2023 07:42:29 GMT</lastBuildDate>
+  	<item>
+        		<title>[Major disruptions]: Platform Status</title>
+        		<link>https://metastatus.com/graph-api</link>
+        		<guid isPermaLink="false">Platform Status update at: Thu, 06 Jul 2023 07:42:29 GMT</guid>
+        		<description>Were aware of an issue impacting Instant Games. Our engineering teams are actively working to resolve the issue as quickly as possible.</description>
+        		<pubDate>Thu, 06 Jul 2023 07:42:29 GMT</pubDate>
+        	</item>
+        
+  </channel>
+
+  </rss>
